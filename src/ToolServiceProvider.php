@@ -26,6 +26,10 @@ class ToolServiceProvider extends ServiceProvider
         Nova::serving(function (ServingNova $event) {
             //
         });
+
+        $this->publishes([
+            __DIR__.'/../config/nova-stripe.php' => config_path('nova-stripe.php')
+        ], 'config');
     }
 
     /**
